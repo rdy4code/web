@@ -1,0 +1,56 @@
+/* add your CSS here */
+
+.container {
+    width: 320px;
+    /* width: 15+1+30+300+15+1+7+15; */
+    margin-left: 2px;
+    margin-right: 13px;
+    border: 1px solid #cecece;
+    box-shadow: 7px 7px #e6e6e6;
+}
+
+h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+
+img {
+    widows: 300px;
+    height: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.description{
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #cecece;
+    font-size: 12px;
+}
+
+.italic-description{
+    font-style: italic;
+}
+
+ul {
+    justify-content: left;
+    padding-inline-start: 0px;
+}
+
+li {
+    font-size: 12px;
+    list-style-type: none;
+}
+
+li > span{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+
