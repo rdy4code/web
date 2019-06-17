@@ -25,12 +25,7 @@ ul {
   margin: 0;
 }
 
-
-/*
- *
- * Common
- * 
- */
+/* * * Common * * */
 
 .news__more {
   float: right;
@@ -39,12 +34,7 @@ ul {
   text-decoration: none;
 }
 
-
-/*
- *
- * Header
- *
- */
+/* * * Header * * */
 
 .header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
@@ -53,7 +43,7 @@ ul {
 }
 
 .header__inner {
-  width: 800px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -73,15 +63,10 @@ ul {
   color: #212121;
 }
 
-
-/*
- *
- * Top Level Navigation
- *
- */
+/* * * Top Level Navigation * * */
 
 .nav {
-  width: 800px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -105,6 +90,7 @@ ul {
 .nav a {
   text-decoration: none;
   color: #616161;
+  padding: 1.5em;
 }
 
 .nav a:hover {
@@ -112,36 +98,23 @@ ul {
   color: #212121;
 }
 
-
-/*
- *
- * Main
- *
- */
+/* * * Main * * */
 
 main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  width: 800px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-/*
- *
- * Content
- *
- */
+/* * * Content * * */
 
 
-/*
- *
- * Hero
- *
- */
+/* * * Hero * * */
 
 .hero {
   float: left;
-  width: 480px;
+  width: 100%;
   position: relative;
   background-image: url("./images/dog.jpg");
   background-size: cover;
@@ -160,16 +133,11 @@ main {
   padding: 1em;
 }
 
-
-/*
- *
- * Top News
- *
- */
+/* * * Top News * * */
 
 .top-news {
   float: right;
-  width: 320px;
+  width: 100%;
   height: 300px;
   border-bottom: 1px solid #E0E0E0;
   padding: 1em;
@@ -199,6 +167,7 @@ main {
 .top-news__item a {
   text-decoration: none;
   color: #666;
+  padding: 1.5em inherit;
 }
 
 .top-news__item a:hover,
@@ -206,15 +175,10 @@ main {
   text-decoration: underline;
 }
 
-
-/*
- *
- * Sport Scores
- *
- */
+/* * * Sport Scores * * */
 
 .scores {
-  width: 480px;
+  width: 100%;
   float: left;
   padding-top: 1em;
 }
@@ -256,15 +220,11 @@ main {
   text-align: center;
 }
 
-/*
- *
- * Weather
- *
- */
+/* * * Weather * * */
 
 .weather {
   float: right;
-  width: 320px;
+  width: 100%;
   padding: 1em;
 }
 
@@ -311,12 +271,7 @@ main {
   width: 100%;
 }
 
-
-/*
- *
- * Weather
- *
- */
+/* * * Stuff * * */
 
 .recent-news {
   clear: both;
@@ -341,6 +296,7 @@ main {
 .snippet__title a {
   text-decoration: none;
   color: #666;
+  padding: 1.5em inherit;
 }
 
 .snippet__title a:hover,
@@ -348,12 +304,7 @@ main {
   text-decoration: underline;
 }
 
-
-/*
- *
- * Footer
- *
- */
+/* * * Footer * * */
 
 footer {
   border-top: 1px solid #E0E0E0;
@@ -369,4 +320,8 @@ footer li {
 footer a {
   text-decoration: none;
   color: #333;
+  padding: 1.5em inherit;
 }
+
+/* * * Queries * * */
+
