@@ -343,3 +343,7 @@ footer a {
 }
 
 */
+
+@media screen (min-width: 450px) and (max-width: 550px){
+  .seven
+}
