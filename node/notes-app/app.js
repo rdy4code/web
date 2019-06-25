@@ -7,7 +7,10 @@
 
 
 const chalk = require("chalk");
+const yargs = require("yargs")
+
 const getNotes = require('./nodes.js');
+
 
 // const msg = getNotes();
 // console.log(msg)
@@ -19,10 +22,14 @@ const getNotes = require('./nodes.js');
  
 // console.log(process.argv[2])
 
-const command = process.argv[2]
+// const command = process.argv[2]
+console.log(process.argv)
 
-if (command === "add"){
-    console.log("Adding note");
-} else if (command === "remove"){
-    console.log("Removing note");
-}
+/* yargs is using to parse options into an object and easily access them  */
+console.log(yargs.argv); 
+
+// if (command === "add"){
+//     console.log("Adding note");
+// } else if (command === "remove"){
+//     console.log("Removing note");
+// }
