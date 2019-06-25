@@ -5,8 +5,24 @@
 // const sum = add(3, 4);
 // console.log(sum);
 
-const getNotes = require('./nodes.js');
-const msg = getNotes();
-console.log(msg);
-console.log("test");
 
+const chalk = require("chalk");
+const getNotes = require('./nodes.js');
+
+// const msg = getNotes();
+// console.log(msg)
+
+// /* nodemon is ude to continious run an app (need to install it globaly with g flag)*/
+// /* Chalk module is use to print color logs */
+// const greenMsg = chalk.blue.inverse.bold("Success!");
+// console.log(greenMsg)
+ 
+// console.log(process.argv[2])
+
+const command = process.argv[2]
+
+if (command === "add"){
+    console.log("Adding note");
+} else if (command === "remove"){
+    console.log("Removing note");
+}
