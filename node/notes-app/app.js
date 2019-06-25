@@ -25,8 +25,12 @@ const getNotes = require('./nodes.js');
 // const command = process.argv[2]
 console.log(process.argv)
 
+/* Customize yargs version */
+yargs.version("1.0.1")
+
 /* yargs is using to parse options into an object and easily access them  */
 console.log(yargs.argv); 
+
 
 // if (command === "add"){
 //     console.log("Adding note");
