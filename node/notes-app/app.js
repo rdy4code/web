@@ -22,11 +22,56 @@ const getNotes = require('./nodes.js');
  
 // console.log(process.argv[2])
 
+
+
 // const command = process.argv[2]
 console.log(process.argv)
 
-/* Customize yargs version */
+/* * Customizing Yargs 8 */
+
+/* Customize version */
 yargs.version("1.0.1")
+
+// Create add command
+yargs.command({
+    command: "add",
+    describe: "Add a new note",
+    handler: function(){
+        console.log("Adding a new note!");
+    }
+})
+
+/* Create remove command */
+yargs.command({
+    command: "remove",
+    describe: "Removing the note", 
+    handler: function(){
+        console.log("Removing the note");
+    }
+})
+
+/*Create read command */
+yargs.command({
+    command: "read",
+    describe: "Reading the note", 
+    handler: function(){
+        console.log("Reading the note");
+    }
+})
+
+/*Create list command */
+yargs.command({
+    command: "list",
+    describe: "List all notes", 
+    handler: function(){
+        console.log("Note list");
+    }
+})
+
+
+// Create remove command
+
+
 
 /* yargs is using to parse options into an object and easily access them  */
 console.log(yargs.argv); 
