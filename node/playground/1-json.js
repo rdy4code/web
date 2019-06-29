@@ -2,29 +2,37 @@ const fs = require("fs");
 
 /* Create JSON file for an object */
 
-const book = {
-    title: "Ego is an enemy",
-    author: "Ryan Holiday"
+const myUser = {
+    name: "Serge",
+    age: "35",
+    planet: "Earth"
 }
 
-const bookJSON = JSON.stringify(book);
-fs.writeFileSync("1-json.json", bookJSON)
+const userJSON = JSON.stringify(myUser);
+fs.writeFileSync("2-json.json", userJSON)
 
-// - - - - - 
-
-/* Read JSON file (need convert binary code to string) */
-
-const dataBuffer = fs.readFileSync("1-json.json")\
-console.log(dataBuffer); //Binary code
+/* Read from a file an rewrite an information */
+const dataBuffer = fs.readFileSync("2-json.json") // Read a JSON data from a file
 const dataJSON = dataBuffer.toString(); // convert data to a standard string
-console.log(dataJSON)
 
-const data = JSON.parse(dataJSON); // parsing to an object
-console.log(data.title) //Access to the object's title
+const person = JSON.parse(dataJSON); // parse JSON data to an object
+console.log(person)
 
-// - - - - - 
+// Write new information
+person.name = "Vasya";
+person.age = 24;
 
+// Rewrite with the new data
+personJSON = JSON.stringify(person);
+fs.writeFileSync("2-json.json", personJSON)
 
-// console.log(bookJSON);
-// const bookParsed = JSON.parse(bookJSON);
-// console.log(bookParsed.author);
+// - - - - - - - - - - 
+
+//Check the console 
+
+const secondBuffer = fs.readFileSync("2-json.json")
+const secondJSON = secondBuffer.toString();
+const data = JSON.parse(secondJSON);
+console.log(data)
+
+/* To read a JSON file (we need to convert binary code to strings) */
