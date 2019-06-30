@@ -1,1 +1,0 @@
-This file was created with nodejs. I live in Moscow.
