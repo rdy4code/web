@@ -1,11 +1,26 @@
-const fs = require("fs");
+const fs = require("fs")
 
-console.log("Starting the nodes.js");
+const getNotes = () =>{
+    "Your notes..."
+}
 
-let add = (x, y) => x+y;
-let sub = (x, y) => x-y;
+const addNote = (title, body) =>{
+    const notes = loadNotes()
+    console.log(notes);
+}
+// Read--> toString --> parse
+const loadNotes = () => {
+    try {
+        const notes = loadNotes()
+        const dataBuffer = fs.readFileSync("notes.json") //Read file /than
+        const dataJSON = dataBuffer.toString()
+        return JSON.parse(dataJSON)
+    } catch (err) {
+        return []
+    }
+}
 
 module.exports = {
-    add, // add: add --> single element
-    sub
-}
+    getNotes,
+    addNote
+} 
