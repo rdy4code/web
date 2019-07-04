@@ -8,7 +8,6 @@ const notes = require("./notes.js"); // recieve getNotes, addNote
 // console.log(greenMsg);
 
 const command = (yargs.argv[2]);
-
 /* * Customizing Yargs 8 */
 
 /* Customize version */
@@ -29,7 +28,6 @@ yargs.command({
             demandOption: true, //Required info
             type: "string"
         }
-
     },
 
     handler: function(argv) {
@@ -41,9 +39,17 @@ yargs.command({
 yargs.command({
     command: "remove",
     describe: "Remove the note",
+    builder: {
+        title: {
+            describe: "Remove title",
+            demandOption: true,
+            type: "string"
 
-    handler: function() {
-         console.log("Removing the note")
+        }
+    },
+
+    handler: function(argv) {
+        notes.removeNote(argv.title);
     }
 })
 

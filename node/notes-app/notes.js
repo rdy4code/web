@@ -4,6 +4,7 @@ const getNotes = () =>{
     "Your notes..."
 }
 
+/* ADD command */
 const addNote = (title, body) =>{
     const notes = loadNotes();
 
@@ -39,10 +40,21 @@ const loadNotes = () => {
 const saveNotes = (notes) =>{
     const dataJSON = JSON.stringify(notes);
     fs.writeFileSync("notes.json", dataJSON);
-
 }
+
+/* REMOVE command */
+const removeNote = (title) => {
+    const notes = loadNotes();
+
+    const notesToKeep = notes.filter(function(note) {
+        return note.title !== title ;
+    })
+
+    saveNotes(notesToKeep);
+ }
 
 module.exports = {
     getNotes,
-    addNote
+    addNote,
+    removeNote
 } 
