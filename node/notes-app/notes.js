@@ -1,7 +1,7 @@
 const fs = require("fs")
 const chalk = require("chalk")
 
-const getNotes = () =>{
+const getNotes = () => {
     "Your notes..."
 }
 
@@ -10,10 +10,7 @@ const addNote = (title, body) =>{
     const notes = loadNotes();
 
     //Check for duplicates
-    const duplicateNotes = notes.filter(function(note) {
-        return note.title === title
-
-    })
+    const duplicateNotes = notes.filter((note) => note.title === title)
 
     if (duplicateNotes.length === 0) {
         notes.push({
@@ -38,7 +35,7 @@ const loadNotes = () => {
     }
 }  
 
-const saveNotes = (notes) =>{
+const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes);
     fs.writeFileSync("notes.json", dataJSON);
 }
@@ -47,9 +44,7 @@ const saveNotes = (notes) =>{
 const removeNote = (title) => {
     const notes = loadNotes();
 
-    const notesToKeep = notes.filter(function(note) {
-        return note.title !== title ;
-    })
+    const notesToKeep = notes.filter((note) => note.title !== title)
 
     //Print chalk background depends from 
 
