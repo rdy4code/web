@@ -5,15 +5,14 @@ const getNotes = () => {
     "Your notes..."
 }
 
-
 /* ADD command */
 const addNote = (title, body) =>{
     const notes = loadNotes();
     
     //Check for duplicates
-    const duplicateNotes = notes.filter((note) => note.title === title)
+    const duplicateNote = notes.find((note) => note.title === title) //continue to go through an array until find the match
     
-    if (duplicateNotes.length === 0) {
+    if (!duplicateNote) {
         notes.push({
             title: title,
             body: body
@@ -35,7 +34,6 @@ const loadNotes = () => {
         return []
     }
 }  
-
 
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes);
@@ -69,10 +67,26 @@ const removeNote = (title) => {
     })
  }
 
+ /* READ command */
+
+ const readNote = (title) => {
+     const notes = loadNotes();
+     const note = notes.find((note) => note.title === title);
+
+    if (note) {
+        console.log(chalk.inverse(note.title));
+        console.log(note.body);
+    } else {
+        console.log(chalk.red.inverse("Note not found!"));
+
+    }
+ }
+
 
 module.exports = {
     getNotes,
     addNote,
     removeNote,
-    listNotes
+    listNotes,
+    readNote
 } 
