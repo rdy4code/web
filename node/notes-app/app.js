@@ -59,10 +59,9 @@ yargs.command({
     describe: "Read the note",
 
     handler() {
-         console.log("Reading the note")
+        console.log("Reading the note")
     }
 })
-
 yargs.parse();
 
 /*Create LIST command */
@@ -71,18 +70,20 @@ yargs.command({
     describe: "List the note",
 
     handler() {
-         console.log("List all notes")
+        // console.log("your notes")
+        notes.listNotes();
     }
 })
+yargs.parse();
 
 
-if(command === "add"){
-    console.log("Adding note");
-} else if (command === "remove")  {
-    console.log("Removing note");
-} else if (command === "read")  {
-    console.log("Reading the notes");
-} else if (command === "remove")  {
-    console.log("Removing note");
-}
+// if(command === "add"){
+//     console.log("Adding note");
+// } else if (command === "remove")  {
+//     console.log("Removing note");
+// } else if (command === "read")  {
+//     console.log("Reading the notes");
+// } else if (command === "remove")  {
+//     console.log("Removing note");
+// }
  
