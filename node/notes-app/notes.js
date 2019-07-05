@@ -1,4 +1,5 @@
 const fs = require("fs")
+const chalk = require("chalk")
 
 const getNotes = () =>{
     "Your notes..."
@@ -35,7 +36,7 @@ const loadNotes = () => {
     } catch (err) {
         return []
     }
-}
+}  
 
 const saveNotes = (notes) =>{
     const dataJSON = JSON.stringify(notes);
@@ -50,7 +51,15 @@ const removeNote = (title) => {
         return note.title !== title ;
     })
 
-    saveNotes(notesToKeep);
+    //Print chalk background depends from 
+
+    if (notes.length > notesToKeep.length) {
+        console.log(chalk.green.inverse("Note removed!"));
+        saveNotes(notesToKeep);
+    } else {
+        console.log(chalk.red.inverse("No note found!"));
+    }
+
  }
 
 module.exports = {
