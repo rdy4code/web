@@ -81,15 +81,3 @@ yargs.command({
     }
 })
 yargs.parse();
-
-
-// if(command === "add"){
-//     console.log("Adding note");
-// } else if (command === "remove")  {
-//     console.log("Removing note");
-// } else if (command === "read")  {
-//     console.log("Reading the notes");
-// } else if (command === "remove")  {
-//     console.log("Removing note");
-// }
- 
