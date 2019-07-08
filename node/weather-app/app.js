@@ -6,6 +6,14 @@ const url =
 //Request ({object obligatory}, callback function with 2 arguments (error - if something went wrong)
 //and (response - if everything is OK)
 
-request({ url: url }, (error, response) => {
-  console.log(response);
+request({ url: url, json: true }, (error, response) => {
+  // console.log(response.body.currently);
+
+  console.log(
+    "It is currently " +
+      response.body.currently.temperature +
+      " degrees out. There is a " +
+      response.body.currently.precipProbability +
+      "% chance of rain."
+  );
 });
