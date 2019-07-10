@@ -10,21 +10,21 @@ const forecast = (latitude, longitude, callback) => {
     longitude +
     "?units=si";
 
-  request({ url: url, json: true }, (error, response) => {
+  request({ url, json: true }, (error, { body } = response) => {
     //low lvl cast error
     if (error) {
       callback("Unable to connect to weather service!", undefined);
-    } else if (response.body.error) {
+    } else if (body.error) {
       callback("Unable to find location. Try another search.", undefined);
     } else {
       callback(
         undefined,
         "It is currently " +
-          response.body.currently.temperature +
+          body.currently.temperature +
           " degrees out. There is a " +
-          response.body.currently.precipProbability +
+          body.currently.precipProbability +
           "% chance of " +
-          response.body.daily.data[0].precipType +
+          body.daily.data[0].precipType +
           "."
       );
     }
