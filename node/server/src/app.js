@@ -4,7 +4,16 @@ const express = require("express")
 const app = express(); 
 
 const publicDirectoryPath = path.join(__dirname, "../public"); //to reroute static file
+
 app.use(express.static(publicDirectoryPath))
+
+app.get("/weather", (req, res) => {
+    res.send({
+        forecast: "it's snowing",
+        location: "Moscow"
+    })
+
+})
 
 //app.com
 

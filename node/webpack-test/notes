@@ -1,0 +1,35 @@
+a. mkdir src dist config
+b. git init
+c. npm init -y
+d. echo "node_modules" > .gitignore
+
+e. npm i -g webpack webpack-cli //need couple config files to run
+    1. touch dist/index.html src/index.js //index.html(config servers)
+
+e. webpack --mode=development
+    1. webpack(-cli) --mode=production  --> main.js
+    2. touch config/webpack.dev.js  --> webpack.dev.js
+    3. rm dist/main.js src/index.js
+    4. touch src/main.js
+
+d. 3 parameters to start webpack server ? --> entry: {}, mode:"", output: {}.
+
+const path = require("path");
+module.exports = {
+    entry: {
+        main: "./src/main.js"  //bundle
+    },
+    mode: "development"
+    output: {
+        filename: "[name]-bundle.src",
+        path: path.resolve(__dirname, "../dist") <!-- (run) webpack --config=config/webpack.dev.js --> 
+    }
+}
+
+    1. webpack --config=config/webpack.dev.js
+    2. npm i -S webpack webpack-cli webpack-dev-server
+    3. npx webpack-dev-server --config=config/webpack.dev.js
+
+Double click on locahost:8080
+
+ 
