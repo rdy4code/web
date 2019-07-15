@@ -11,7 +11,8 @@ module.exports = {
         publicPath: "/"
     },
     devServer: {
-        contentBase: "dist"
+        contentBase: "dist",
+        overlay: true
     },
     module: {
         rules: [
@@ -23,6 +24,21 @@ module.exports = {
                     },
                     {
                         loader: "css-loader" //it runs fist than style-loader inject css if sees it
+                    }
+                ]
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: "[name].html"
+                        }
+                    },{
+                        loader: "extract-loader"                        
+                    },{
+                        loader: "html-loader"
                     }
                 ]
             }
