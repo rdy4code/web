@@ -1,7 +1,4 @@
-require("./index.html");
-require("./main.css");
-
-var a = async () => {
-    await console.log("Hello from the future!");
-    console.log("Done!");
-}
+require("./main.css")
+require("./content.css")
+require("./images/link.jpg")
+require("./app")
